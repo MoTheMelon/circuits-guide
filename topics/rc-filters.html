@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RC low-pass &amp; high-pass filters · Circuits Field Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-page="rc-filters" data-root="..">
+<main>
+<article class="topic wrap" data-id="rc-filters">
+<h1>RC low-pass &amp; high-pass filters</h1>
+<p class="lede">Because a capacitor's impedance changes with frequency, an R and a C make a frequency-dependent voltage divider. A <b>low-pass</b> passes slow signals and removes high-frequency noise (sensor smoothing, PWM-to-analog). A <b>high-pass</b> blocks DC and passes changes (AC coupling audio).</p>
+<div class="eqs">
+<div class="eq"><div class="f"><var>f</var><sub>c</sub> = <span class="fr"><span>1</span><span>2π<var>RC</var></span></span></div><div class="c">Cutoff frequency: output is −3 dB (70.7%) here.</div></div>
+<div class="eq"><div class="f">|<var>H</var><sub>LP</sub>| = <span class="fr"><span>1</span><span>√(1 + (<var>f</var>/<var>f</var><sub>c</sub>)²)</span></span></div><div class="c">Low-pass gain. Falls 20 dB per decade above fc.</div></div>
+<div class="eq"><div class="f">|<var>H</var><sub>HP</sub>| = <span class="fr"><span><var>f</var>/<var>f</var><sub>c</sub></span><span>√(1 + (<var>f</var>/<var>f</var><sub>c</sub>)²)</span></span></div><div class="c">High-pass gain.</div></div>
+<div class="eq"><div class="f">dB = 20 log<sub>10</sub>(<var>V</var><sub>out</sub>/<var>V</var><sub>in</sub>)</div><div class="c">−3 dB ≈ 0.707×, −20 dB = 0.1×, −40 dB = 0.01×.</div></div>
+</div>
+<div data-sim="filt"></div>
+</article>
+</main>
+<script src="../assets/js/engine.js"></script>
+<script src="../assets/js/topics.js"></script>
+<script src="../assets/js/sims/fundamentals.js"></script>
+<script src="../assets/js/sims/passives.js"></script>
+<script src="../assets/js/sims/semiconductors.js"></script>
+<script src="../assets/js/sims/electromechanical.js"></script>
+<script src="../assets/js/sims/sensors.js"></script>
+<script src="../assets/js/sims/signals.js"></script>
+<script src="../assets/js/sims/power.js"></script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

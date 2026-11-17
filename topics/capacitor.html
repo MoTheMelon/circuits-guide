@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Capacitor &amp; RC charging · Circuits Field Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-page="capacitor" data-root="..">
+<main>
+<article class="topic wrap" data-id="capacitor">
+<h1>Capacitor &amp; RC charging</h1>
+<p class="lede">A capacitor stores energy in an electric field between two plates. It opposes changes in voltage: current flows only while the voltage is changing. That makes caps the go-to part for smoothing supplies, decoupling ICs, timing, filtering and blocking DC.</p>
+<div data-syms="C,Cp,Cv"></div>
+<div class="eqs">
+<div class="eq"><div class="f"><var>Q</var> = <var>C</var> · <var>V</var></div><div class="c">Charge stored (coulombs). C in farads; real parts are pF to mF.</div></div>
+<div class="eq"><div class="f"><var>i</var> = <var>C</var> <span class="fr"><span><var>dv</var></span><span><var>dt</var></span></span></div><div class="c">Current is proportional to how fast voltage changes. Voltage can't jump instantly.</div></div>
+<div class="eq"><div class="f">τ = <var>R</var> · <var>C</var></div><div class="c">Time constant: 63% charged after 1τ, ~99% after 5τ.</div></div>
+<div class="eq"><div class="f"><var>v</var>(<var>t</var>) = <var>V</var><sub>s</sub>(1 − <var>e</var><sup>−<var>t</var>/τ</sup>)</div><div class="c">Charging. Discharging: <var>V</var><sub>0</sub><var>e</var><sup>−<var>t</var>/τ</sup>.</div></div>
+<div class="eq"><div class="f"><var>E</var> = ½ <var>C V</var>²</div><div class="c">Energy stored (joules).</div></div>
+<div class="eq"><div class="f"><var>X</var><sub>C</sub> = <span class="fr"><span>1</span><span>2π<var>f C</var></span></span></div><div class="c">Reactance: open circuit at DC, near-short at high frequency.</div></div>
+</div>
+<div data-sim="rc"></div>
+<h3>What a real circuit needs</h3>
+<ul class="req">
+<li><b>Decoupling</b>100 nF ceramic as close as possible to every IC power pin, plus 1–10 µF bulk per board section.</li>
+<li><b>Polarity</b>Electrolytic and tantalum caps are polarized: stripe = negative. Reversed, they can vent or burn.</li>
+<li><b>Voltage rating</b>Pick ≥ 1.5–2× the working voltage. Ceramic (X5R/X7R) caps lose much of their capacitance at high DC bias.</li>
+<li><b>Codes</b>"104" = 10 × 10⁴ pF = 100 nF. "105" = 1 µF. "220" = 22 pF.</li>
+</ul>
+</article>
+</main>
+<script src="../assets/js/engine.js"></script>
+<script src="../assets/js/topics.js"></script>
+<script src="../assets/js/sims/fundamentals.js"></script>
+<script src="../assets/js/sims/passives.js"></script>
+<script src="../assets/js/sims/semiconductors.js"></script>
+<script src="../assets/js/sims/electromechanical.js"></script>
+<script src="../assets/js/sims/sensors.js"></script>
+<script src="../assets/js/sims/signals.js"></script>
+<script src="../assets/js/sims/power.js"></script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

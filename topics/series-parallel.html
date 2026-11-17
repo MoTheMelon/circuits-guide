@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Series &amp; parallel resistance · Circuits Field Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-page="series-parallel" data-root="..">
+<main>
+<article class="topic wrap" data-id="series-parallel">
+<h1>Series &amp; parallel: total resistance</h1>
+<p class="lede">In <b>series</b>, parts share one path, so the same current flows through all of them and resistances add. In <b>parallel</b>, parts share the same two nodes, so they see the same voltage and their conductances (1/R) add.</p>
+<div class="eqs">
+<div class="eq"><div class="f"><var>R</var><sub>eq</sub> = <var>R</var><sub>1</sub> + <var>R</var><sub>2</sub> + …</div><div class="c">Series resistors.</div></div>
+<div class="eq"><div class="f"><span class="fr"><span>1</span><span><var>R</var><sub>eq</sub></span></span> = <span class="fr"><span>1</span><span><var>R</var><sub>1</sub></span></span> + <span class="fr"><span>1</span><span><var>R</var><sub>2</sub></span></span> + …</div><div class="c">Parallel resistors.</div></div>
+<div class="eq"><div class="f"><var>R</var><sub>1</sub>∥<var>R</var><sub>2</sub> = <span class="fr"><span><var>R</var><sub>1</sub><var>R</var><sub>2</sub></span><span><var>R</var><sub>1</sub>+<var>R</var><sub>2</sub></span></span></div><div class="c">"Product over sum" — two in parallel. Two equal resistors give R/2.</div></div>
+<div class="eq"><div class="f"><var>C</var><sub>par</sub> = <var>C</var><sub>1</sub> + <var>C</var><sub>2</sub></div><div class="c">Capacitors combine the opposite way: add in parallel, reciprocal in series. Inductors combine like resistors.</div></div>
+</div>
+<div data-sim="sp"></div>
+</article>
+</main>
+<script src="../assets/js/engine.js"></script>
+<script src="../assets/js/topics.js"></script>
+<script src="../assets/js/sims/fundamentals.js"></script>
+<script src="../assets/js/sims/passives.js"></script>
+<script src="../assets/js/sims/semiconductors.js"></script>
+<script src="../assets/js/sims/electromechanical.js"></script>
+<script src="../assets/js/sims/sensors.js"></script>
+<script src="../assets/js/sims/signals.js"></script>
+<script src="../assets/js/sims/power.js"></script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Formula cheat sheet · Circuits Field Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-page="cheatsheet" data-root="..">
+<main>
+<article class="topic wrap" data-id="cheatsheet">
+<h1>Formula cheat sheet</h1>
+<div class="scroll"><table class="stack">
+<thead><tr><th>Topic</th><th>Formula</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Ohm's law</td><td>V = I·R</td><td>I = V/R, R = V/I</td></tr>
+<tr><td>Power</td><td>P = V·I = I²R = V²/R</td><td>watts</td></tr>
+<tr><td>Series R</td><td>R = R1 + R2 + …</td><td>same current</td></tr>
+<tr><td>Parallel R</td><td>1/R = 1/R1 + 1/R2 + …</td><td>same voltage; two: R1R2/(R1+R2)</td></tr>
+<tr><td>Voltage divider</td><td>Vout = Vin·R2/(R1+R2)</td><td>unloaded</td></tr>
+<tr><td>Current divider</td><td>I1 = I·R2/(R1+R2)</td><td>two branches</td></tr>
+<tr><td>Thévenin</td><td>Rth = Voc/Isc</td><td>max power at RL = Rth</td></tr>
+<tr><td>Capacitor</td><td>Q = CV, i = C dv/dt, E = ½CV²</td><td>parallel adds</td></tr>
+<tr><td>Inductor</td><td>v = L di/dt, E = ½LI²</td><td>series adds</td></tr>
+<tr><td>RC / RL time constant</td><td>τ = RC, τ = L/R</td><td>63% at 1τ, 99% at 5τ</td></tr>
+<tr><td>Reactance</td><td>Xc = 1/(2πfC), XL = 2πfL</td><td>ohms</td></tr>
+<tr><td>RC cutoff</td><td>fc = 1/(2πRC)</td><td>−3 dB, 20 dB/decade</td></tr>
+<tr><td>Resonance</td><td>f0 = 1/(2π√LC)</td><td>Q = (1/R)√(L/C)</td></tr>
+<tr><td>RMS (sine)</td><td>Vrms = Vp/√2</td><td>Vpp = 2Vp</td></tr>
+<tr><td>Decibels</td><td>dB = 20 log(V2/V1) = 10 log(P2/P1)</td><td>−3 dB ≈ 0.707×</td></tr>
+<tr><td>Transformer</td><td>Vs/Vp = Ns/Np</td><td>Is/Ip = Np/Ns</td></tr>
+<tr><td>Diode</td><td>I = Is(e^(V/nVT) − 1)</td><td>Vf ≈ 0.7 V Si, 0.3 V Schottky</td></tr>
+<tr><td>LED resistor</td><td>R = (Vs − Vf)/If</td><td>round up to the next standard value</td></tr>
+<tr><td>BJT</td><td>Ic = β·Ib, Ie = Ic + Ib</td><td>switch: Rb = (Vin − 0.7)/(Ic/10)</td></tr>
+<tr><td>MOSFET</td><td>Id = ½k(Vgs − Vth)²</td><td>on: P = Id²·Rds(on)</td></tr>
+<tr><td>Op-amp</td><td>non-inv 1 + Rf/Rg; inv −Rf/Rin</td><td>V+ = V−, no input current</td></tr>
+<tr><td>PWM</td><td>Vavg = D·V</td><td>D = ton/T</td></tr>
+<tr><td>ADC</td><td>code = ⌊Vin/Vref·2ⁿ⌋</td><td>LSB = Vref/2ⁿ</td></tr>
+<tr><td>Thermistor</td><td>1/T = 1/T0 + ln(R/R0)/B</td><td>kelvin</td></tr>
+<tr><td>I²C pull-up</td><td>tr = 0.8473·Rp·Cb</td><td>Rp ≥ (Vcc − 0.4)/3 mA</td></tr>
+<tr><td>Linear regulator</td><td>P = (Vin − Vout)·I</td><td>Tj = Ta + P·θJA</td></tr>
+</tbody></table></div>
+</article>
+</main>
+<script src="../assets/js/engine.js"></script>
+<script src="../assets/js/topics.js"></script>
+<script src="../assets/js/sims/fundamentals.js"></script>
+<script src="../assets/js/sims/passives.js"></script>
+<script src="../assets/js/sims/semiconductors.js"></script>
+<script src="../assets/js/sims/electromechanical.js"></script>
+<script src="../assets/js/sims/sensors.js"></script>
+<script src="../assets/js/sims/signals.js"></script>
+<script src="../assets/js/sims/power.js"></script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

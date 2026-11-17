@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Solenoid &amp; flyback diode · Circuits Field Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-page="solenoid" data-root="..">
+<main>
+<article class="topic wrap" data-id="solenoid">
+<h1>Solenoid &amp; flyback diode</h1>
+<p class="lede">A solenoid is a coil that pulls a steel plunger when energised — door locks, valves, pinball flippers, recoil mechanisms. It draws a lot of current (often 0.5–2 A) and stores real energy in its magnetic field, so the driver circuit is all about switching that energy safely.</p>
+<div data-syms="SOL,NMOS,D"></div>
+<div class="eqs">
+<div class="eq"><div class="f"><var>I</var> = <var>V</var> / <var>R</var><sub>coil</sub></div><div class="c">Steady current. A 12 V, 20 Ω solenoid draws 0.6 A, 7.2 W.</div></div>
+<div class="eq"><div class="f"><var>F</var> ∝ (<var>N I</var>)²</div><div class="c">Pull force rises with the square of ampere-turns and falls steeply as the air gap grows.</div></div>
+<div class="eq"><div class="f"><var>v</var> = <var>L</var> <span class="fr"><span><var>di</var></span><span><var>dt</var></span></span></div><div class="c">At switch-off the coil generates whatever voltage keeps its current flowing.</div></div>
+</div>
+<div data-sim="sol"></div>
+<h3>Required circuit</h3>
+<ul class="req">
+<li><b>N-channel logic-level MOSFET</b>Low side, rated for ≥ 2× the solenoid current and supply voltage.</li>
+<li><b>Flyback diode across the coil</b>Cathode to +V, anode to the MOSFET drain. 1N4001–1N4007 or a Schottky (SS34) rated for the coil current.</li>
+<li><b>Gate resistor + pull-down</b>100 Ω series, 10 kΩ gate-to-ground.</li>
+<li><b>Bulk capacitor</b>100–1000 µF across the supply near the solenoid so the inrush doesn't brown out your microcontroller. Share grounds, but run the solenoid's current return separately.</li>
+<li><b>Duty cycle</b>Many solenoids are rated for intermittent duty; holding them on continuously overheats them. PWM-reduce the hold current if needed.</li>
+</ul>
+</article>
+</main>
+<script src="../assets/js/engine.js"></script>
+<script src="../assets/js/topics.js"></script>
+<script src="../assets/js/sims/fundamentals.js"></script>
+<script src="../assets/js/sims/passives.js"></script>
+<script src="../assets/js/sims/semiconductors.js"></script>
+<script src="../assets/js/sims/electromechanical.js"></script>
+<script src="../assets/js/sims/sensors.js"></script>
+<script src="../assets/js/sims/signals.js"></script>
+<script src="../assets/js/sims/power.js"></script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

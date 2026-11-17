@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diode · Circuits Field Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-page="diode" data-root="..">
+<main>
+<article class="topic wrap" data-id="diode">
+<h1>Diode</h1>
+<p class="lede">A diode lets current flow one way — from anode to cathode (the bar on the symbol, the stripe on the part) — once the forward voltage is exceeded, and blocks it in reverse until breakdown. Uses: reverse-polarity protection, rectification, flyback clamping, signal steering and OR-ing power sources.</p>
+<div data-syms="D,SK,Z,LED"></div>
+<div class="eqs">
+<div class="eq"><div class="f"><var>I</var> = <var>I</var><sub>S</sub>(<var>e</var><sup><var>V</var>/(<var>n V</var><sub>T</sub>)</sup> − 1)</div><div class="c">Shockley diode equation. <var>V</var><sub>T</sub> = kT/q ≈ 25.9 mV at room temperature; <var>n</var> ≈ 1–2.</div></div>
+<div class="eq"><div class="f"><var>V</var><sub>F</sub> ≈ 0.6–0.7 V</div><div class="c">Silicon. Schottky ≈ 0.2–0.4 V (fast, leakier). LEDs 1.8–3.3 V.</div></div>
+<div class="eq"><div class="f">+60 mV per 10× <var>I</var></div><div class="c">Exponential: forward voltage creeps up only slightly as current rises (for n = 1). Vf drops ~2 mV/°C.</div></div>
+</div>
+<div data-sim="diode"></div>
+<table class="stack"><thead><tr><th>Part</th><th>Type</th><th>Typical use</th></tr></thead><tbody>
+<tr><td>1N4148</td><td>small-signal Si, fast</td><td>logic, clamping, low-current flyback</td></tr>
+<tr><td>1N4001–1N4007</td><td>1 A rectifier</td><td>power rectifiers, relay/solenoid flyback (slow but robust)</td></tr>
+<tr><td>1N5817–1N5819, SS34</td><td>Schottky</td><td>reverse-polarity protection, switching regulators</td></tr>
+</tbody></table>
+</article>
+</main>
+<script src="../assets/js/engine.js"></script>
+<script src="../assets/js/topics.js"></script>
+<script src="../assets/js/sims/fundamentals.js"></script>
+<script src="../assets/js/sims/passives.js"></script>
+<script src="../assets/js/sims/semiconductors.js"></script>
+<script src="../assets/js/sims/electromechanical.js"></script>
+<script src="../assets/js/sims/sensors.js"></script>
+<script src="../assets/js/sims/signals.js"></script>
+<script src="../assets/js/sims/power.js"></script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

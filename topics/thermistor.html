@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thermistor (NTC) · Circuits Field Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-page="thermistor" data-root="..">
+<main>
+<article class="topic wrap" data-id="thermistor">
+<h1>Thermistor (NTC)</h1>
+<p class="lede">An NTC thermistor's resistance drops as it warms. It is cheap and sensitive, but non-linear, so firmware converts the ADC reading back to temperature with the Beta (or Steinhart–Hart) equation.</p>
+<div data-syms="TH"></div>
+<div class="eqs">
+<div class="eq"><div class="f"><var>R</var>(<var>T</var>) = <var>R</var><sub>0</sub> <var>e</var><sup><var>B</var>(1/<var>T</var> − 1/<var>T</var><sub>0</sub>)</sup></div><div class="c">Beta model. T in kelvin; T<sub>0</sub> = 298.15 K (25 °C).</div></div>
+<div class="eq"><div class="f"><span class="fr"><span>1</span><span><var>T</var></span></span> = <span class="fr"><span>1</span><span><var>T</var><sub>0</sub></span></span> + <span class="fr"><span>1</span><span><var>B</var></span></span> ln<span class="fr"><span><var>R</var></span><span><var>R</var><sub>0</sub></span></span></div><div class="c">Inverse, used in firmware.</div></div>
+</div>
+<div data-sim="ntc"></div>
+<p>Choose the fixed resistor equal to the thermistor's resistance at the middle of the range you care about. Keep the divider current low (tens of µA) so the thermistor doesn't heat itself.</p>
+</article>
+</main>
+<script src="../assets/js/engine.js"></script>
+<script src="../assets/js/topics.js"></script>
+<script src="../assets/js/sims/fundamentals.js"></script>
+<script src="../assets/js/sims/passives.js"></script>
+<script src="../assets/js/sims/semiconductors.js"></script>
+<script src="../assets/js/sims/electromechanical.js"></script>
+<script src="../assets/js/sims/sensors.js"></script>
+<script src="../assets/js/sims/signals.js"></script>
+<script src="../assets/js/sims/power.js"></script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AC signals, RMS &amp; impedance · Circuits Field Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-page="ac-signals" data-root="..">
+<main>
+<article class="topic wrap" data-id="ac-signals">
+<h1>AC signals, RMS &amp; impedance</h1>
+<p class="lede">An AC signal is described by its amplitude, frequency and phase. <b>RMS</b> is the DC voltage that would deliver the same heating power — wall outlets are quoted in RMS (120 V RMS ≈ 170 V peak). <b>Impedance</b> Z extends resistance to AC: capacitors and inductors resist current differently at different frequencies and shift its phase.</p>
+<div class="eqs">
+<div class="eq"><div class="f"><var>v</var>(<var>t</var>) = <var>V</var><sub>p</sub> sin(2π<var>f t</var> + φ)</div><div class="c">Sinusoid; ω = 2π<var>f</var> in rad/s; period <var>T</var> = 1/<var>f</var>.</div></div>
+<div class="eq"><div class="f"><var>V</var><sub>rms</sub> = <span class="fr"><span><var>V</var><sub>p</sub></span><span>√2</span></span> ≈ 0.707 <var>V</var><sub>p</sub></div><div class="c">Sine only. Square wave: Vrms = Vp. Triangle: Vp/√3.</div></div>
+<div class="eq"><div class="f"><var>Z</var><sub>R</sub> = <var>R</var></div><div class="c">Resistor: no phase shift.</div></div>
+<div class="eq"><div class="f"><var>Z</var><sub>C</sub> = <span class="fr"><span>1</span><span><var>j</var>ω<var>C</var></span></span></div><div class="c">Capacitor: |Z| falls with frequency; current leads voltage by 90°.</div></div>
+<div class="eq"><div class="f"><var>Z</var><sub>L</sub> = <var>j</var>ω<var>L</var></div><div class="c">Inductor: |Z| rises with frequency; current lags voltage by 90°.</div></div>
+<div class="eq"><div class="f"><var>V</var> = <var>I</var> · <var>Z</var></div><div class="c">Ohm's law with complex numbers; series/parallel rules apply to Z.</div></div>
+</div>
+<div data-sim="ac"></div>
+</article>
+</main>
+<script src="../assets/js/engine.js"></script>
+<script src="../assets/js/topics.js"></script>
+<script src="../assets/js/sims/fundamentals.js"></script>
+<script src="../assets/js/sims/passives.js"></script>
+<script src="../assets/js/sims/semiconductors.js"></script>
+<script src="../assets/js/sims/electromechanical.js"></script>
+<script src="../assets/js/sims/sensors.js"></script>
+<script src="../assets/js/sims/signals.js"></script>
+<script src="../assets/js/sims/power.js"></script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LED &amp; current-limiting resistor · Circuits Field Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-page="led" data-root="..">
+<main>
+<article class="topic wrap" data-id="led">
+<h1>LED &amp; current-limiting resistor</h1>
+<p class="lede">An LED is a diode that emits light. Because its current rises exponentially with voltage, you must never connect one straight across a supply; a series resistor sets the current. The long leg is the anode (+); the flat side of the case marks the cathode.</p>
+<div data-syms="LED"></div>
+<div class="eqs">
+<div class="eq"><div class="f"><var>R</var> = <span class="fr"><span><var>V</var><sub>s</sub> − <var>V</var><sub>F</sub></span><span><var>I</var><sub>F</sub></span></span></div><div class="c">Current-limiting resistor. Indicator LEDs look bright at 2–10 mA.</div></div>
+<div class="eq"><div class="f"><var>P</var><sub>R</sub> = <var>I</var><sub>F</sub>² <var>R</var></div><div class="c">Resistor dissipation.</div></div>
+</div>
+<div data-sim="led"></div>
+<div class="tip"><b>Driving from a GPIO.</b><p>A microcontroller pin can typically source or sink only a few to ~12 mA (check the datasheet; the RP2040's default drive is 4 mA). For more current or many LEDs, switch them with a transistor or use a constant-current LED driver.</p></div>
+</article>
+</main>
+<script src="../assets/js/engine.js"></script>
+<script src="../assets/js/topics.js"></script>
+<script src="../assets/js/sims/fundamentals.js"></script>
+<script src="../assets/js/sims/passives.js"></script>
+<script src="../assets/js/sims/semiconductors.js"></script>
+<script src="../assets/js/sims/electromechanical.js"></script>
+<script src="../assets/js/sims/sensors.js"></script>
+<script src="../assets/js/sims/signals.js"></script>
+<script src="../assets/js/sims/power.js"></script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

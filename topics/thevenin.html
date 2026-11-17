@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thévenin &amp; Norton equivalents · Circuits Field Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-page="thevenin" data-root="..">
+<main>
+<article class="topic wrap" data-id="thevenin">
+<h1>Thévenin &amp; Norton equivalents</h1>
+<p class="lede">Any linear network seen from two terminals behaves exactly like a single voltage source <var>V</var><sub>th</sub> in series with a single resistance <var>R</var><sub>th</sub> (Thévenin), or a current source <var>I</var><sub>N</sub> in parallel with <var>R</var><sub>N</sub> = <var>R</var><sub>th</sub> (Norton). It is how you reason about "output impedance" and loading.</p>
+<div class="eqs">
+<div class="eq"><div class="f"><var>V</var><sub>th</sub> = <var>V</var><sub>open-circuit</sub></div><div class="c">Measure or compute the voltage with nothing connected.</div></div>
+<div class="eq"><div class="f"><var>R</var><sub>th</sub> = <var>V</var><sub>oc</sub> / <var>I</var><sub>sc</sub></div><div class="c">Or: zero all sources (short V sources, open I sources) and find R between the terminals.</div></div>
+<div class="eq"><div class="f"><var>I</var><sub>N</sub> = <var>V</var><sub>th</sub> / <var>R</var><sub>th</sub></div><div class="c">Norton current = short-circuit current.</div></div>
+<div class="eq"><div class="f"><var>P</var><sub>max</sub> = <span class="fr"><span><var>V</var><sub>th</sub>²</span><span>4<var>R</var><sub>th</sub></span></span></div><div class="c">Maximum power transfer occurs when <var>R</var><sub>L</sub> = <var>R</var><sub>th</sub> (efficiency is only 50% there).</div></div>
+</div>
+<div data-sim="thev"></div>
+</article>
+</main>
+<script src="../assets/js/engine.js"></script>
+<script src="../assets/js/topics.js"></script>
+<script src="../assets/js/sims/fundamentals.js"></script>
+<script src="../assets/js/sims/passives.js"></script>
+<script src="../assets/js/sims/semiconductors.js"></script>
+<script src="../assets/js/sims/electromechanical.js"></script>
+<script src="../assets/js/sims/sensors.js"></script>
+<script src="../assets/js/sims/signals.js"></script>
+<script src="../assets/js/sims/power.js"></script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>
