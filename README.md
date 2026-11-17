@@ -2,6 +2,8 @@
 
 Interactive reference for circuit fundamentals and components: formulas, schematic symbols, and live simulations with sliders, one topic per page.
 
+**Live site: <https://mothemelon.github.io/circuits-guide/>**
+
 Plain static HTML/CSS/JS. No framework, no build step, no dependencies. Open `index.html` in a browser and it works.
 
 ## Run locally
@@ -12,19 +14,9 @@ Double-click `index.html`, or serve the folder:
 python3 -m http.server 8000   # then open http://localhost:8000
 ```
 
-## Publish on GitHub Pages
+## Publishing
 
-1. Create a new repository on GitHub and push this folder to it:
-   ```sh
-   git init
-   git add .
-   git commit -m "Circuits Field Guide"
-   git branch -M main
-   git remote add origin https://github.com/<you>/circuits-guide.git
-   git push -u origin main
-   ```
-2. On GitHub: **Settings → Pages → Build and deployment → Source: Deploy from a branch**, branch `main`, folder `/ (root)`.
-3. After a minute the site is live at `https://<you>.github.io/circuits-guide/`.
+The site is served by GitHub Pages from the `main` branch, root folder. Every push to `main` redeploys it to <https://mothemelon.github.io/circuits-guide/>, usually within a minute.
 
 `.nojekyll` is included so GitHub serves every file as-is.
 
